@@ -31,12 +31,9 @@ public class OrcController : MonoBehaviour {
 		}
 	}
 	
-/* UNDER CONSTRUCTION	
-	void OnTriggerEnter2D(Collider other){
-		//print("collision");
-		//if(other.gameObject.CompareTag("collectible")){
+	void OnTriggerEnter2D(Collider2D other){		
+		if(other.gameObject.CompareTag("collectible")){
 			Destroy(other.gameObject);
-		//}
+		}
 	}
-*/
 }
