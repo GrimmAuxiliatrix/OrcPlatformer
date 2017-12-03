@@ -27,13 +27,8 @@ public class OrcController : MonoBehaviour {
 			anim.SetInteger ("state", 0);
 		}
 
-		//if (Input.GetKeyDown ("w")) {
-			//GetComponent<Rigidbody2D> ().AddForce (howHigh, ForceMode2D.Impulse);
-		//}
-		if (canjump == true) {
-			if (Input.GetKeyDown ("w")) {
-				GetComponent<Rigidbody2D>().AddForce(howHigh, ForceMode2D.Impulse);
-			}
+		if(Input.GetKeyDown("w") && canjump == true){
+			GetComponent<Rigidbody2D>().AddForce(howHigh, ForceMode2D.Impulse);
 			canjump = false;
 		}
 	}
