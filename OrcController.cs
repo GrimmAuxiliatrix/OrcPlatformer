@@ -6,12 +6,13 @@ public class OrcController : MonoBehaviour {
 	public Animator anim;
 	public float spd = 10f;
 	public Vector2 howHigh;
+	private bool canjump = false;
 
 	// Use this for initialization
 	void Start () {
 		anim = GetComponent<Animator> ();
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetKey ("d")) {
@@ -25,15 +26,24 @@ public class OrcController : MonoBehaviour {
 		} else {
 			anim.SetInteger ("state", 0);
 		}
-		
-		if(Input.GetKeyDown("w")){
-			GetComponent<Rigidbody2D>().AddForce(howHigh, ForceMode2D.Impulse);
+
+		//if (Input.GetKeyDown ("w")) {
+			//GetComponent<Rigidbody2D> ().AddForce (howHigh, ForceMode2D.Impulse);
+		//}
+		if (canjump == true) {
+			if (Input.GetKeyDown ("w")) {
+				GetComponent<Rigidbody2D>().AddForce(howHigh, ForceMode2D.Impulse);
+			}
+			canjump = false;
 		}
 	}
-	
-	void OnTriggerEnter2D(Collider2D other){		
+	void OnTriggerEnter2D(Collider2D other) {
+		if (other.CompareTag ("platform")) {
+			canjump = true;
+		}
 		if(other.gameObject.CompareTag("collectible")){
 			Destroy(other.gameObject);
 		}
+
 	}
 }
