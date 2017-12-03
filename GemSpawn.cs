@@ -11,7 +11,7 @@ public class GemSpawn : MonoBehaviour {
 	void Start () {
 		for (int i = 0; i < count; i++) {
 			foreach (GameObject gem in gems){
-				Instantiate (gem, new Vector3(Random.Range (-10, 10), vVal, 0), Quaternion.identity);
+				Instantiate (gem, new Vector3(Random.Range (-10, 10), vVal, -1), Quaternion.identity);
 			}
 		}
 	}
