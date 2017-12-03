@@ -1,6 +1,6 @@
 # OrcPlatformer
 
-HOW TO MAKE THE ORC NOT GO THROUGH EVERYTHING:
+HOW TO MAKE THE ORC NOT GO THROUGH EVERYTHING:<br>
 -Set the orc's collider to isTrigger.
 -Make a new empty gameObject.
 -Make this gameObject a child of the orc, and then drag it over to the orc in the scene.
