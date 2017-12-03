@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class OrcController : MonoBehaviour {
@@ -31,9 +31,12 @@ public class OrcController : MonoBehaviour {
 		}
 	}
 	
-	void OnTriggerEnter(Collider other){
-		if(other.CompareTag("collectible")){
+/* UNDER CONSTRUCTION	
+	void OnTriggerEnter2D(Collider other){
+		//print("collision");
+		//if(other.gameObject.CompareTag("collectible")){
 			Destroy(other.gameObject);
-		}
+		//}
 	}
+*/
 }
