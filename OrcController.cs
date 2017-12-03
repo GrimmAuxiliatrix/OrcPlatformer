@@ -6,11 +6,19 @@ public class OrcController : MonoBehaviour {
 	public Animator anim;
 	public float spd = 10f;
 	public Vector2 howHigh;
-	private bool canjump = false;
+	public Color txtColor;
+	public int txtSize = 100;
+	
+	private bool canjump = true;
+	private int count = 0;
+	private string displayTxt;
+	private GUIStyle textConfig = new GUIStyle();
 
 	// Use this for initialization
 	void Start () {
 		anim = GetComponent<Animator> ();
+		textConfig.fontSize = txtSize;
+		textConfig.normal.textColor = txtColor;
 	}
 
 	// Update is called once per frame
@@ -32,13 +40,19 @@ public class OrcController : MonoBehaviour {
 			canjump = false;
 		}
 	}
+	
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.CompareTag ("platform")) {
 			canjump = true;
 		}
 		if(other.gameObject.CompareTag("collectible")){
 			Destroy(other.gameObject);
+			count++;
 		}
 
+	}
+	
+	private void OnGUI(){
+		displayTxt = GUI.TextField(new Rect(750, 10, 50, 20), count.ToString(), textConfig);
 	}
 }
