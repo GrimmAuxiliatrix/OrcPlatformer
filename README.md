@@ -13,3 +13,5 @@ HOW TO SET UP FOR PLATFORM AND ORC GENERATION this is simpler:<br>
 -Drag it to the prefabs folder and then delete it from the heirarchy
 -Drag the orc to the prefabs folder and then delete it from the heirarchy (make sure the score count and everything else works first!)
 -Use those two prefabs for the new variables in the GemSpawn script
+
+orcplatformer3 is the working build of the game
