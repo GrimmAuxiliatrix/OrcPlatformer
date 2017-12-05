@@ -23,7 +23,7 @@ public class GemSpawn : MonoBehaviour {
 			xMin += 7;
 			xMax += 7;
 			if(i==0){
-				Instantiate(orc, new Vector3(-7, vVal, -1), Quaternion.identity);
+				orc.transform.position = new Vector3(-7, vVal, -1);
 			}
 		}
 	}
