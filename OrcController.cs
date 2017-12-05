@@ -15,12 +15,16 @@ public class OrcController : MonoBehaviour {
 	private int count = 0;
 	private string displayTxt;
 	private GUIStyle textConfig = new GUIStyle();
+	
+	public GameObject cam;
+	private Vector3 offset; 
 
 	// Use this for initialization
 	void Start () {
 		anim = GetComponent<Animator> ();
 		textConfig.fontSize = txtSize;
 		textConfig.normal.textColor = txtColor;
+		offset = cam.transform.position - transform.position;
 	}
 
 	// Update is called once per frame
@@ -47,6 +51,10 @@ public class OrcController : MonoBehaviour {
 
 		if (Input.GetKey("escape"))
 			Application.Quit();
+	}
+	
+	void LateUpdate(){
+		cam.transform.position = transform.position + offset;
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {
